@@ -7,7 +7,7 @@ $(function () {
     const colorSix= 'pink';
     const choice= 'green';
 
-    const selection = '25-34';
+    const selection = 'zero';
     let pieOne = colorOne;
     let pieTwo = colorTwo;
     let pieThree = colorThree;
@@ -15,10 +15,10 @@ $(function () {
     let pieFive = colorFive;
     let pieSix = colorSix;
 
-    if(selection == 'Under 17') {
+    if(pet1.checked) {
         pieOne = choice;
     }
-    if(selection == '18-24') {
+    if(pet3.checked) {
         pieTwo = choice;
     }
     if(selection == '25-34') {
@@ -27,7 +27,7 @@ $(function () {
     if(selection == '35-44') {
         pieFour = choice;
     }
-    if(selection == '45-54') {
+    if(pet2.checked) {
         pieFive = choice;
     }
     if(selection == '55-64') {
@@ -71,21 +71,38 @@ $(function () {
             }
         }
     });
+    let pieBOne = colorOne;
+    let pieBTwo = colorTwo;
+    let pieBThree = colorThree;
+    let pieBFour = colorFour;
+    let pieBFive = colorFive;
+    let pieBSix = colorSix;
+
+    if(pet2.checked) {
+        pieBFive = choice;
+    }
 
     var ctx_2 = document.getElementById("Currently_At").getContext('2d');
     var data_2 = {
         datasets: [{
-            data: [10, 20, 30],
+            data: [12340, 21236, 38980, 12340, 58720, 123],
             backgroundColor: [
-                '#3c8dbc',
-                '#f56954',
-                '#f39c12',
+                pieBOne,
+                pieBTwo,
+                pieBThree,
+                pieBFour,
+                pieBFive,
+                pieBSix
+                
             ],
         }],
         labels: [
-            'Request',
-            'Pink',
-            'Problem'
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
@@ -102,20 +119,40 @@ $(function () {
             }
         }
     });
-    var ctx_2 = document.getElementById("Major").getContext('2d');
+    let pieCOne = colorOne;
+    let pieCTwo = colorTwo;
+    let pieCThree = colorThree;
+    let pieCFour = colorFour;
+    let pieCFive = colorFive;
+    if(pet2.checked) {
+        pieCOne = choice;
+    }
+    if(pet3.checked) {
+        pieCTwo = choice;
+    }
+    if(pet1.checked) {
+        pieCFour = choice;
+    }
+
+    var ctx_2 = document.getElementById("College_year").getContext('2d');
     var data_2 = {
         datasets: [{
-            data: [10, 20, 30],
+            data: [105, 250, 370, 140, 850],
             backgroundColor: [
-                '#3c8dbc',
-                '#f56954',
-                '#f39c12',
+                pieCOne,
+                pieCTwo,
+                pieCThree,
+                pieCFour,
+                pieCFive
+                
             ],
         }],
         labels: [
-            'Request',
-            'Dog',
-            'Problem'
+            'Freshman',
+            'Sophmore',
+            'Junior',
+            'Senior',
+            'Senior+'
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
