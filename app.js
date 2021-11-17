@@ -6,15 +6,44 @@ $(function () {
     const colorFive= 'yellow';
     const colorSix= 'pink';
     const choice= 'green';
+
+    const selection = '25-34';
+    let pieOne = colorOne;
+    let pieTwo = colorTwo;
+    let pieThree = colorThree;
+    let pieFour = colorFour;
+    let pieFive = colorFive;
+    let pieSix = colorSix;
+
+    if(selection == 'Under 17') {
+        pieOne = choice;
+    }
+    if(selection == '18-24') {
+        pieTwo = choice;
+    }
+    if(selection == '25-34') {
+        pieThree = choice;
+    }
+    if(selection == '35-44') {
+        pieFour = choice;
+    }
+    if(selection == '45-54') {
+        pieFive = choice;
+    }
+    if(selection == '55-64') {
+        pieSix = choice;
+    }
     var ctx = document.getElementById("Age_range").getContext('2d');
     var data = {
         datasets: [{
             data: [10, 20, 30, 40, 50, 60],
             backgroundColor: [
-                '#3c8dbc',
-                '#f56954',
-                '#f39c12',
-                choice
+                pieOne,
+                pieTwo,
+                pieThree,
+                pieFour,
+                pieFive,
+                pieSix
                 
             ],
         }],
