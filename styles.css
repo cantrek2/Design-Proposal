@@ -1,6 +1,42 @@
-html, body, #container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ebe7e3;
+}
+
+div.holder {
+  background-color: #ffffff;
+  margin: auto;
+  width: 69%;
+  border-bottom: 2px solid #99999969;
+  border-right: 2px solid #99999969;
+  padding: 10px;
+  text-align: center;
+}
+
+input.survey {
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+input.survey-button {
+  border: 2px solid blue;
+  color: white;
+  padding: 10px;
+  background: blue;
+}
+
+input.survey-button:hover {
+  border: 2px solid #5353ff;
+  color: #5353ff;
+  padding: 10px;
+  background: blue;
+}
