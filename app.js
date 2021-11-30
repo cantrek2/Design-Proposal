@@ -1,4 +1,4 @@
-$(function () {
+function populateGraphs () {
     const colorOne= '#3c8dbc';
     const colorTwo= '#f56954';
     const colorThree= '#f39c12';
@@ -169,4 +169,61 @@ $(function () {
             }
         }
     });
-});
+}
+function postClick(i) {
+    console.log(i)
+}
+
+function useSurvey() {
+    document.getElementById("submit_info_button").value = "Update Results"
+
+    // extract info from survey
+    var name = document.getElementById("nameBox").value
+    var age = document.getElementById("genderBox").value
+    var gender = document.getElementById("ageBox").value
+
+    var locationState = document.getElementById("locationStateBox").value
+    var locationCity = document.getElementById("locationCityBox").value
+
+    var major = document.getElementById("majorBox").value
+
+    var pet1 = document.getElementById("pet1")
+    var pet2 = document.getElementById("pet2")
+    var pet3 = document.getElementById("pet3")
+    var selectedPet = ""
+    if(pet1.checked) selectedPet = pet1.value
+    if(pet2.checked) selectedPet = pet2.value
+    if(pet3.checked) selectedPet = pet3.value
+
+    var food1 = document.getElementById("food1")
+    var food2 = document.getElementById("food2")
+    var food3 = document.getElementById("food3")
+    var selectedFood = ""
+    if(food1.checked) selectedFood = food1.value
+    if(food2.checked) selectedFood = food2.value
+    if(food3.checked) selectedFood = food3.value
+
+    // print usable info
+    if(name != "")
+        console.log(name)
+    if(age != "")
+        console.log(age)
+    if(gender != "")
+        console.log(gender)
+    if(locationState != "")
+        console.log(locationState)
+    if(locationCity != "")
+        console.log(locationCity)
+    if(major != "")
+        console.log(major)
+    if(selectedPet != "")
+        console.log(selectedPet)
+    if(selectedFood != "")
+        console.log(selectedFood)
+
+    // use info for Facebook API?
+    // TODO: use Facebook api?
+
+    // show results on graphs 
+    populateGraphs()
+}
