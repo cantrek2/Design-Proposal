@@ -9,62 +9,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
-
-    <link rel="stylesheet" href="styles.css">
-
     <title>Browsing Feedback</title>
-    <script>
-      
-    </script>
 </head>
 
 <body>
   <div>
     <div class="holder">
-        <h1>Enter Information</h1>
-        
-        <p><input id="nameBox" placeholder="Name" type="text" class="survey"></p>
+        <div style="background-color: blue; padding: 10px;">
+            <h1 style="color: white;">Enter Information</h1>
+        </div>
+            <h2>Personal</h2>
+            <p><input id="nameBox" placeholder="First/Last Name" type="text" class="survey"></p>
+            <p><input id="ageBox" placeholder="Age" type="text" class="survey"></p>
+            <p><input id="genderBox" placeholder="Gender" type="text" class="survey"></p>
 
-        <p>
-            <div style="margin: auto;text-align: start; width: fit-content;">
-                Favorite Pet<br>
-                <input type="radio" id="pet1" name="pet" value="cat"><label for="pet1">Cat</label><br>
-                <input type="radio" id="pet2" name="pet" value="dog"><label for="pet2">Dog</label><br>  
-                <input type="radio" id="pet3" name="pet" value="snake"><label for="pet3">Snake</label><br><br>
-            </div>
-        </p>
+            <h2>Location</h2>
+            <p><input id="locationStateBox" placeholder="State" type="text" class="survey"></p>
+            <p><input id="locationCityBox" placeholder="City" type="text" class="survey"></p>
 
-        <p><input id="locationBox" placeholder="Location" type="text" class="survey"></p>
+            <h2>Additional</h2>
+            <p><input id="majorBox" placeholder="Major (if applicable)" type="text" class="survey"></p>
+            <p>
+                <div style="margin: auto;text-align: start; width: fit-content;">
+                    <b>Favorite Pet</b><br>
+                    <input type="radio" id="pet1" name="pet" value="cat"><label for="pet1">Cat</label><br>
+                    <input type="radio" id="pet2" name="pet" value="dog"><label for="pet2">Dog</label><br>  
+                    <input type="radio" id="pet3" name="pet" value="snake"><label for="pet3">Snake</label><br><br>
+                </div>
+            </p>
+            <p>
+                <div style="margin: auto;text-align: start; width: fit-content;">
+                    <b>Favorite Food</b><br>
+                    <input type="radio" id="food1" name="food" value="Sandwich"><label for="food1">Sandwich</label><br>
+                    <input type="radio" id="food2" name="food" value="Soup"><label for="food2">Soup</label><br>  
+                    <input type="radio" id="food3" name="food" value="Spaghetti"><label for="food3">Spaghetti</label><br><br>
+                </div>
+            </p>
 
-        <p><input id="majorBox" placeholder="Major" type="text" class="survey"></p>
-
-        <input type="button" value="Submit" class="survey-button" onclick="useSurvey()">
-        <script>
-            function useSurvey() {
-                var name = document.getElementById("nameBox").value
-                var pet1 = document.getElementById("pet1")
-                var pet2 = document.getElementById("pet2")
-                var pet3 = document.getElementById("pet3")
-                var selectedPet = "none"
-                if(pet1.checked) selectedPet = pet1.value
-                if(pet2.checked) selectedPet = pet2.value
-                if(pet3.checked) selectedPet = pet3.value
-
-                var location = document.getElementById("locationBox").value
-                var major = document.getElementById("majorBox").value
-
-                console.log(name)
-                console.log(selectedPet)
-                console.log(location)
-                console.log(major)
-            }
-        </script>
-    </div>
+            <input id="submit_info_button" type="button" value="Continue to results" class="survey-button" onclick="useSurvey()">
+        </div>
    </div>
 
-   <br >
+   <br>
 
-   <div  class="holder">
+   <div class="holder">
     <div>
         <canvas id="Age_range" width="240px" height="240px"></canvas>
     </div>
