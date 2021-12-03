@@ -7,7 +7,7 @@ var prefFood = z;
 var education = z;
 var favoriteTeams = z;
 var favoriteAthletes = z;
-var gender = z;
+var prefGender = z;
 //var hometown = z;
 var inspirationalPeople = z;
 var languages = z;
@@ -47,14 +47,15 @@ function setup() {
     stroke('black');
     strokeWeight(10);
     line(0, z, 180, ageRange);
-    line(180, ageRange, 360, education);
-    line(360, education, 540, favoriteTeams);
-    line(540, favoriteTeams, 720, favoriteAthletes);
-    line(720, favoriteAthletes, 900, gender);
-    line(900, gender, 1080, inspirationalPeople);
-    line(1080, inspirationalPeople, 1260, languages);
-    line(1260, languages, 1440, curLocation);
-    line(1440, curLocation, 1620, z);
+    line(180, ageRange, 360, prefFood);
+    line(360, prefFood, 540, education);
+    line(540, education, 720, favoriteTeams);
+    line(720, favoriteTeams, 900, favoriteAthletes);
+    line(900, favoriteAthletes, 1080, prefGender);
+    line(1080, prefGender, 1260, inspirationalPeople);
+    line(1260, inspirationalPeople, 1440, languages);
+    line(1440, languages, 1620, curLocation);
+    line(1620, curLocation, 1800, z);
     strokeWeight(1);
     textSize(32);
     text('Age', 190, 30);
@@ -93,29 +94,132 @@ function setup() {
     
 
   if(food1.checked) {
-      pieBOne = choice;
-      ageRange = z-50;
+    prefFood = z-50;
   }
   if(food2.checked) {
-      pieBTwo = choice;
-      ageRange = z-150;
+    prefFood = z-150;
   }
   if(food3.checked) {
-      pieBThree = choice;
-      ageRange = z+50;
+      prefFood = z+50;
   }
   if(food4.checked) {
-      pieBFour = choice;
-      ageRange = z-100;
+    prefFood = z-100;
   }
   if(food5.checked) {
-      pieBFive = choice;
-      ageRange = z+100;
+    prefFood = z+100;
   }
   if(food6.checked) {
-      pieBSix = choice;
-      ageRange = z+150;
+    prefFood = z+150;
   }
+
+  if(major == 'Business') {
+    education = z+200;
+}else if(major == 'Health Profession' || major == 'Nursing' || major == 'Doctor' || major == 'Nurse') {
+  education = z-50;
+}else if(major == 'Social Science' || major == 'History') {
+  education = z+100;
+}else if(major == 'Engineering') {
+  education = z-50;
+}else if(major == 'Bio Science' || major == 'Bio' || major == 'Bioscience') {
+  education = z-50;
+}else if(major == 'Pyschology') {
+  education = z+150;
+}else if(major == 'Communication') {
+  education = z-50;
+}else if(major == 'Visuals Arts' || major == 'Performancing Arts' || major == 'Arts') {
+  education = z-200;
+}else if(major == 'Computer Science' || major == "Information Science") {
+  education = z+50;
+}else if(major == 'Education') {
+  education = z-150;
+} else {
+  education = z;
+}
+
+if(team == 'Manchester United') {
+  favoriteTeams = z+150;
+}else if(team == 'New York Yankees') {
+  favoriteTeams = z-100;
+}else if(team == 'Los Angeles Lakers') {
+  favoriteTeams = z+100;
+}else if(team == 'Real Madrid') {
+  favoriteTeams = z-50;
+}else if(team == 'Green Bay Packers') {
+  favoriteTeams = z +50;
+} else {
+  favoriteTeams = z;
+}
+
+
+if(player == 'Lebron James') {
+  favoriteAthletes = z+100;
+}else if(player == 'Cristiano Ronaldo') {
+  favoriteAthletes = z-100;
+}else if(player == 'Lionel Messi') {
+  favoriteAthletes = z-50;
+}else if(player == 'John Cena') {
+  favoriteAthletes = z+150;
+}else if(player == 'Neymar') {
+  favoriteAthletes = z+50;
+} else {
+  favoriteAthletes = z;
+}
+
+if(gender == 'female' || gender == 'Female') {
+  prefGender = z-50;
+} else if(gender == 'male' || gender == 'Male') {
+  prefGender = z+50;
+} else {
+  prefGender = z-100;
+}
+
+
+if(people == 'Ugur Sahin') {
+  inspirationalPeople = z-50;
+}else if(people == 'Kamala Harris') {
+  inspirationalPeople = z-100;
+}else if(people == 'Joe Biden') {
+  inspirationalPeople = z-150;
+}else if(people == 'Anthony Fauci') {
+  inspirationalPeople = +50;
+}else if(people == 'Emmanuelle Charpentier') {
+  inspirationalPeople = z+250;
+}else if(people == 'Jacinda Ardern') {
+  inspirationalPeople = z+200;
+}else if(people == 'Meghan Markle') {
+  inspirationalPeople = z+150;
+}else if(people == 'Sanna Marin') {
+  inspirationalPeople = z+100;
+}else if(people == 'Michelle Obama') {
+  inspirationalPeople = z-200;
+}else {
+  inspirationalPeople = z;
+}
+
+if(language1.checked) {
+  languages = z +50;
+}
+if(language2.checked) {
+  languages = z -50;
+}
+if(language3.checked) {
+  languages = z -100;
+}
+if(language4.checked) {
+  languages = z -150;
+}
+
+if(locationCity == 'Mt Vernon' || locationCity =='Mt, Vernon') {
+  curLocation = z - 150;
+} else if(locationCity == 'Bellingham') {
+  curLocation = z - 50;
+} else if(locationState == 'Washington' && locationCity != 'Mt Vernon' && locationCity != 'Bellingham') {
+  curLocation = z - 100;
+} else if(locationState == 'Oregon') {
+  curLocation = z + 50;
+} else {
+  curLocation = z;
+}
   }
 
   

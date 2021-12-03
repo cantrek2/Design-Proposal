@@ -114,23 +114,18 @@ function populateGraphs () {
     }
     if(food2.checked) {
         pieBTwo = choice;
-        ageRange = z-150;
     }
     if(food3.checked) {
         pieBThree = choice;
-        ageRange = z+50;
     }
     if(food4.checked) {
         pieBFour = choice;
-        ageRange = z-100;
     }
     if(food5.checked) {
         pieBFive = choice;
-        ageRange = z+100;
     }
     if(food6.checked) {
         pieBSix = choice;
-        ageRange = z+150;
     }
     var ctx_2 = document.getElementById("Popular_foods").getContext('2d');
     var data_2 = {
@@ -192,37 +187,36 @@ function populateGraphs () {
     
     if(major == 'Business') {
         pieCOne = choice;
-        ageRange = z+200;
     }else if(major == 'Health Profession' || major == 'Nursing' || major == 'Doctor' || major == 'Nurse') {
         pieCTwo = choice;
-        ageRange = z-50;
+
     }else if(major == 'Social Science' || major == 'History') {
         pieCThree = choice;
-        ageRange = z+100;
+        //ageRange = z+100;
     }else if(major == 'Engineering') {
         pieCFour = choice;
-        ageRange = z-50;
+        //ageRange = z-50;
     }else if(major == 'Bio Science' || major == 'Bio' || major == 'Bioscience') {
         pieCFive = choice;
-        ageRange = z-50;
+        //ageRange = z-50;
     }else if(major == 'Pyschology') {
         pieCSix = choice;
-        ageRange = z+150;
+        //ageRange = z+150;
     }else if(major == 'Communication') {
         pieCSeven = choice;
-        ageRange = z-50;
+        //ageRange = z-50;
     }else if(major == 'Visuals Arts' || major == 'Performancing Arts' || major == 'Arts') {
         pieCEight = choice;
-        ageRange = z-200;
+       // ageRange = z-200;
     }else if(major == 'Computer Science' || major == "Information Science") {
         pieCNine = choice;
-        ageRange = z+50;
+       // ageRange = z+50;
     }else if(major == 'Education') {
         pieCTen = choice;
-        ageRange = z-150;
+       // ageRange = z-150;
     } else {
         pieCEleven = choice;
-        ageRange = z;
+      //  ageRange = z;
     }
 
 
@@ -630,9 +624,8 @@ function populateGraphs () {
     let pieIFive = colorFive;
     let pieISix = colorSix;
 
-    var locationState;
-    var locationCity;
-    if(locationCity == 'Mt Vernon' || 'Mt, Vernon') {
+
+    if(locationCity == 'Mt Vernon' || locationCity =='Mt, Vernon') {
         pieIOne = choice;
     } else if(locationCity == 'Bellingham') {
         pieITwo = choice;
