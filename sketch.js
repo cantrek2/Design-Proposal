@@ -16,13 +16,15 @@ var curLocation = z;
 
 
 
-var political = z;
-var favoriteQuotes = z;
-var sports = z;
-var relationship = z;
+
+
+var political;
+var favoriteQuotes;
+var sports;
+var relationship;
 
 function setup() {
-    createCanvas(1800, 600);
+    createCanvas(1800, 700);
   }
   
   function draw() {
@@ -43,7 +45,7 @@ function setup() {
     line(1620, 0, 1620, 600);
     line(1620, 0, 1620, 600);
     line(1800, 0, 1800, 600);
-
+    line(0, 600, 1800, 600);
     stroke('black');
     strokeWeight(10);
     line(0, z, 180, ageRange);
@@ -66,12 +68,14 @@ function setup() {
     text('Gender', 1090, 30);
     text('Inspired By', 1270, 30);
     text('Languages', 1450, 30);
+    text('Location', 1630, 30);
     fill(0, 102, 153);
     rectMode(CENTER);
 
     //rect(x, 150, 150, 150);
     if(age <= 17) {
       ageRange = z;
+
     }
     if(age >= 18 && age <=24) {
       ageRange = z-150;
@@ -92,7 +96,6 @@ function setup() {
       ageRange = z+200;
     }
     
-
   if(food1.checked) {
     prefFood = z-50;
   }
@@ -138,21 +141,29 @@ function setup() {
 
 if(team == 'Manchester United') {
   favoriteTeams = z+150;
+  sports = 1;
 }else if(team == 'New York Yankees') {
+  sports = 0;
   favoriteTeams = z-100;
 }else if(team == 'Los Angeles Lakers') {
+  sports = 0;
   favoriteTeams = z+100;
+  sports = 0;
 }else if(team == 'Real Madrid') {
   favoriteTeams = z-50;
+  sports = 1;
 }else if(team == 'Green Bay Packers') {
   favoriteTeams = z +50;
+  sports = 0;
 } else {
   favoriteTeams = z;
+  sports = 5;
 }
 
 
 if(player == 'Lebron James') {
   favoriteAthletes = z+100;
+  sports = 2;
 }else if(player == 'Cristiano Ronaldo') {
   favoriteAthletes = z-100;
 }else if(player == 'Lionel Messi') {
@@ -161,6 +172,7 @@ if(player == 'Lebron James') {
   favoriteAthletes = z+150;
 }else if(player == 'Neymar') {
   favoriteAthletes = z+50;
+  sports = 1;
 } else {
   favoriteAthletes = z;
 }
@@ -220,6 +232,71 @@ if(locationCity == 'Mt Vernon' || locationCity =='Mt, Vernon') {
 } else {
   curLocation = z;
 }
+
+ageRange;
+prefFood;
+education;
+favoriteTeams;
+favoriteAthletes;
+prefGender;
+inspirationalPeople;
+languages;
+curLocation;
+
+var total = ageRange + prefFood + education + favoriteTeams + favoriteAthletes + prefGender + inspirationalPeople + languages + curLocation;
+var adjustedTotal = total - 2700;
+
+political;
+favoriteQuotes;
+sports;
+relationship;
+
+if(adjustedTotal >= -300 && adjustedTotal <= 300) {
+  political = 0;
+}
+if(adjustedTotal < -300 && adjustedTotal >= -700) {
+  political = -1;
+}
+if(adjustedTotal < -700) {
+  political = -2;
+}
+if(adjustedTotal > 300) {
+  political = -1;
+}
+text(participation, 0, 680);
+if(participation > 5) {
+  text(participation, 0, 680);
+  text('Either due to low responses, or unexpected responses we were unable to accurately place you into a group.', 90, 650);
+  text('If you wish to see any results try to fill in as many surveys as you can. ', 90, 680);
+} else {
+  if(adjustedTotal >= -300 && adjustedTotal <= 300) {
+    text('Based on a 15% confidence you are predicted to be politically Libertarian', 90, 630);
+  }
+  if(adjustedTotal < -300 && adjustedTotal >= -700) {
+    text('Based on a 15% confidence you are predicted to be politically Liberal', 90, 630);
+  }
+  if(adjustedTotal < -700) {
+    text('Based on a 15% confidence you are predicted to be politically Centrist', 90, 630);
+  }
+  if(adjustedTotal > 300) {
+    text('Based on a 15% confidence you are predicted to be politically Conservative', 90, 630);
+  }
+
+  if(sports == 0) {
+    text('Your favorite sport is likely to be North American Football', 90, 650);
+  }
+  if(sports == 1) {
+    text('Your favorite sport is likely to be Soccer', 90, 650);
+  }
+  if(sports == 2) {
+    text('Your favorite sport is likely to be Basketball', 90, 650);
+  }
+  if(sports == 5) {
+   text('You seem not to enjoy a mainstream sport', 90, 650);
+  }
+}
+//text(adjustedTotal, 190, 650);
+
   }
 
   

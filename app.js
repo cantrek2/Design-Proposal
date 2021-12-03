@@ -3,6 +3,7 @@ var major;
 var locationState;
 var locationCity;
 var gender;
+var participation = 0;
 
 var team;
 var player;
@@ -31,9 +32,10 @@ function populateGraphs () {
     let pieSix = colorSix;
     let pieSeven = colorSeven;
 
-
+    participation = 0;
     if(age <= 17) {
         pieOne = choice;
+        participation++;
     }
     if(age >= 18 && age <=24) {
         pieTwo = choice;
@@ -108,24 +110,30 @@ function populateGraphs () {
     let pieBEight = colorEight;
     let pieBNine = colorNine;
     let pieBTen = colorTen;
+    participation++;
     if(food1.checked) {
         pieBOne = choice;
-        ageRange = z-50;
+        participation--;
     }
     if(food2.checked) {
         pieBTwo = choice;
+        participation--;
     }
     if(food3.checked) {
         pieBThree = choice;
+        participation--;
     }
     if(food4.checked) {
         pieBFour = choice;
+        participation--;
     }
     if(food5.checked) {
         pieBFive = choice;
+        participation--;
     }
     if(food6.checked) {
         pieBSix = choice;
+        participation--;
     }
     var ctx_2 = document.getElementById("Popular_foods").getContext('2d');
     var data_2 = {
@@ -216,6 +224,7 @@ function populateGraphs () {
        // ageRange = z-150;
     } else {
         pieCEleven = choice;
+        participation++;
       //  ageRange = z;
     }
 
@@ -308,6 +317,7 @@ function populateGraphs () {
         pieDFive = choice;
     } else {
         pieDSix = choice;
+        participation++;
     }
     var ctx_4 = document.getElementById("Favorite_team").getContext('2d');
     var data_4 = {
@@ -374,6 +384,7 @@ function populateGraphs () {
         pieEFive = choice;
     } else {
         pieESix = choice;
+        participation++;
     }
     var ctx_5 = document.getElementById("Favorite_athlete").getContext('2d');
     var data_5 = {
@@ -431,6 +442,7 @@ function populateGraphs () {
         pieFTwo = choice;
     } else {
         pieFThree = choice;
+        participation++;
     }
 
     var ctx_6 = document.getElementById("Common_genders").getContext('2d');
@@ -503,6 +515,7 @@ function populateGraphs () {
         pieGNine = choice;
     }else {
         pieGTen = choice;
+        participation++;
     }
 
     var ctx_7 = document.getElementById("inspirational_people").getContext('2d');
@@ -635,6 +648,7 @@ function populateGraphs () {
         pieIFour = choice;
     } else {
         pieIFive = choice;
+        participation++;
     }
     var ctx_9 = document.getElementById("Website_location").getContext('2d');
     var data_9 = {
