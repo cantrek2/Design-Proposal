@@ -1,3 +1,5 @@
+//var canvas = document.getElementById("mycanvas");
+//var c = canvas.getContext("2d");
 var z = 150;
 
 var ageRange = 50;

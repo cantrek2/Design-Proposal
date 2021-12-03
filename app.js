@@ -1,3 +1,5 @@
+var age;
+
 function populateGraphs () {
     const colorOne= '#3c8dbc';
     const colorTwo= '#f56954';
@@ -17,25 +19,25 @@ function populateGraphs () {
     let pieSix = colorSix;
     let pieSeven = colorSeven;
 
-    if(pet1.checked) {
+    if(age <= 17) {
         pieOne = choice;
     }
-    if(pet3.checked) {
+    if(age >= 18 && age <=24) {
         pieTwo = choice;
     }
-    if(selection == '25-34') {
+    if(age >= 25 && age <=34) {
         pieThree = choice;
     }
-    if(selection == '35-44') {
+    if(age >= 35 && age <=44) {
         pieFour = choice;
     }
-    if(pet2.checked) {
+    if(age >= 45 && age <=54) {
         pieFive = choice;
     }
-    if(selection == '55-64') {
+    if(age >= 55 && age <=64) {
         pieSix = choice;
     }
-    if(selection == '65+') {
+    if(age >= 65) {
         pieSeven = choice;
     }
     var ctx = document.getElementById("Age_range").getContext('2d');
@@ -94,7 +96,7 @@ function populateGraphs () {
         pieBFive = choice;
     }
 
-    var ctx_2 = document.getElementById("Currently_At").getContext('2d');
+    var ctx_2 = document.getElementById("Popular_foods").getContext('2d');
     var data_2 = {
         datasets: [{
             data: [12340, 21236, 38980, 12340, 58720, 123],
@@ -109,12 +111,12 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Icecream',
+            'Sandwich',
             'Pizza',
             'Burger',
             'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Soup',
+            'Spaghetti'
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
@@ -123,7 +125,7 @@ function populateGraphs () {
         options: {
             title: {
                 display: true,
-                text: 'Most Popular Majors',
+                text: 'Popular Foods',
                 fontSize: 25
             },
             responsive: false,
@@ -545,8 +547,8 @@ function useSurvey() {
 
     // extract info from survey
     var name = document.getElementById("nameBox").value
-    var age = document.getElementById("genderBox").value
-    var gender = document.getElementById("ageBox").value
+    var gender = document.getElementById("genderBox").value
+    age = document.getElementById("ageBox").value
 
     var locationState = document.getElementById("locationStateBox").value
     var locationCity = document.getElementById("locationCityBox").value
@@ -564,10 +566,16 @@ function useSurvey() {
     var food1 = document.getElementById("food1")
     var food2 = document.getElementById("food2")
     var food3 = document.getElementById("food3")
+    var food4 = document.getElementById("food4")
+    var food5 = document.getElementById("food5")
+    var food6 = document.getElementById("food6")
     var selectedFood = ""
     if(food1.checked) selectedFood = food1.value
     if(food2.checked) selectedFood = food2.value
     if(food3.checked) selectedFood = food3.value
+    if(food4.checked) selectedFood = food4.value
+    if(food5.checked) selectedFood = food5.value
+    if(food6.checked) selectedFood = food6.value
 
     // print usable info
     if(name != "")
@@ -591,5 +599,7 @@ function useSurvey() {
     // TODO: use Facebook api?
 
     // show results on graphs 
+
     populateGraphs()
+
 }
