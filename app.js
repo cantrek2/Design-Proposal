@@ -5,6 +5,7 @@ function populateGraphs () {
     const colorFour= 'blue';
     const colorFive= 'yellow';
     const colorSix= 'pink';
+    const colorSeven= 'purple';
     const choice= 'green';
 
     const selection = 'zero';
@@ -14,6 +15,7 @@ function populateGraphs () {
     let pieFour = colorFour;
     let pieFive = colorFive;
     let pieSix = colorSix;
+    let pieSeven = colorSeven;
 
     if(pet1.checked) {
         pieOne = choice;
@@ -33,17 +35,21 @@ function populateGraphs () {
     if(selection == '55-64') {
         pieSix = choice;
     }
+    if(selection == '65+') {
+        pieSeven = choice;
+    }
     var ctx = document.getElementById("Age_range").getContext('2d');
     var data = {
         datasets: [{
-            data: [10, 20, 30, 40, 50, 60],
+            data: [10, 20, 30, 40, 50, 60,35],
             backgroundColor: [
                 pieOne,
                 pieTwo,
                 pieThree,
                 pieFour,
                 pieFive,
-                pieSix
+                pieSix,
+                pieSeven
                 
             ],
         }],
@@ -61,9 +67,15 @@ function populateGraphs () {
         type: 'pie',
         data: data,
         options: {
+            title: {
+                display: true,
+                text: 'Population Age',
+                fontSize: 25
+            },
             responsive: false,
             maintainAspectRatio: false,
             legend: {
+                display: false,
                 position: 'bottom',
                 labels: {
                     boxWidth: 12
@@ -109,9 +121,15 @@ function populateGraphs () {
         type: 'pie',
         data: data_2,
         options: {
+            title: {
+                display: true,
+                text: 'Most Popular Majors',
+                fontSize: 25
+            },
             responsive: false,
             maintainAspectRatio: false,
             legend: {
+                display: false,
                 position: 'bottom',
                 labels: {
                     boxWidth: 12
@@ -137,7 +155,19 @@ function populateGraphs () {
     var ctx_2 = document.getElementById("College_year").getContext('2d');
     var data_2 = {
         datasets: [{
-            data: [105, 250, 370, 140, 850],
+            data: [
+                289384, 
+                141632, 
+                37640, 
+                117553, 
+                120375,
+                127066,
+                98949,
+                29022,
+                55843,
+                102219
+
+            ],
             backgroundColor: [
                 pieCOne,
                 pieCTwo,
@@ -148,20 +178,86 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Freshman',
-            'Sophmore',
-            'Junior',
-            'Senior',
-            'Senior+'
+            'Business',
+            'Health Profession',
+            'Social Science/History',
+            'Engineering',
+            'Bio Science',
+            'Pyschology',
+            'Communication',
+            'Visual/Performing Arts',
+            'Computer Science',
+            'Education',
+            'Other'
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
         type: 'pie',
         data: data_2,
         options: {
+            title: {
+                display: true,
+                text: 'Most Popular Majors',
+                fontSize: 25
+            },
             responsive: false,
             maintainAspectRatio: false,
             legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieDOne = colorOne;
+    let pieDTwo = colorTwo;
+    let pieDThree = colorThree;
+    let pieDFour = colorFour;
+    let pieDFive = colorFive;
+    let pieDSix = colorSix;
+
+    if(pet2.checked) {
+        pieBFive = choice;
+    }
+
+    var ctx_4 = document.getElementById("Favorite_team").getContext('2d');
+    var data_4 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieDOne,
+                pieDTwo,
+                pieDThree,
+                pieDFour,
+                pieDFive,
+                pieDSix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_4 = new Chart(ctx_4, {
+        type: 'pie',
+        data: data_2,
+        options: {
+            title: {
+                display: true,
+                text: 'Most Popular Sports Teams',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
                 position: 'bottom',
                 labels: {
                     boxWidth: 12
