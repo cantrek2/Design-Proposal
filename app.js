@@ -3,7 +3,7 @@ var major;
 var locationState;
 var locationCity;
 var gender;
-var participation = 0;
+var participation = 9;
 var relationship = 0;
 var team;
 var player;
