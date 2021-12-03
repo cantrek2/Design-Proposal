@@ -1,4 +1,12 @@
 var age;
+var major;
+var locationState;
+var locationCity;
+var gender;
+
+var team;
+var player;
+var people;
 
 function populateGraphs () {
     const colorOne= '#3c8dbc';
@@ -8,6 +16,10 @@ function populateGraphs () {
     const colorFive= 'yellow';
     const colorSix= 'pink';
     const colorSeven= 'purple';
+    const colorEight= 'Brown';
+    const colorNine= 'Black';
+    const colorTen= 'teal';
+    const colorEleven= 'White';
     const choice= 'green';
 
     const selection = 'zero';
@@ -91,15 +103,32 @@ function populateGraphs () {
     let pieBFour = colorFour;
     let pieBFive = colorFive;
     let pieBSix = colorSix;
-
-    if(pet2.checked) {
+    let pieBSeven = colorSeven;
+    let pieBEight = colorEight;
+    let pieBNine = colorNine;
+    let pieBTen = colorTen;
+    if(food1.checked) {
+        pieBOne = choice;
+    }
+    if(food2.checked) {
+        pieBTwo = choice;
+    }
+    if(food3.checked) {
+        pieBThree = choice;
+    }
+    if(food4.checked) {
+        pieBFour = choice;
+    }
+    if(food5.checked) {
         pieBFive = choice;
     }
-
+    if(food6.checked) {
+        pieBSix = choice;
+    }
     var ctx_2 = document.getElementById("Popular_foods").getContext('2d');
     var data_2 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [12340, 21236, 38980, 12340, 58720, 7923],
             backgroundColor: [
                 pieBOne,
                 pieBTwo,
@@ -107,25 +136,28 @@ function populateGraphs () {
                 pieBFour,
                 pieBFive,
                 pieBSix
+
                 
             ],
         }],
         labels: [
-            'Sandwich',
+            'Sandwich',     
+            'Soup',
+            'Spaghetti',
             'Pizza',
             'Burger',
             'Carrots',
-            'Soup',
-            'Spaghetti'
+            
+            
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
-        type: 'pie',
+        type: 'bar',
         data: data_2,
         options: {
             title: {
                 display: true,
-                text: 'Popular Foods',
+                text: 'Preferred Foods',
                 fontSize: 25
             },
             responsive: false,
@@ -144,15 +176,40 @@ function populateGraphs () {
     let pieCThree = colorThree;
     let pieCFour = colorFour;
     let pieCFive = colorFive;
-    if(pet2.checked) {
+    let pieCSix = colorSix;
+    let pieCSeven = colorSeven;
+    let pieCEight = colorEight;
+    let pieCNine = colorNine;
+    let pieCTen = colorTen;
+    let pieCEleven = colorEleven;
+    
+    if(major == 'Business') {
         pieCOne = choice;
-    }
-    if(pet3.checked) {
+    }else if(major == 'Health Profession' || major == 'Nursing' || major == 'Doctor' || major == 'Nurse') {
         pieCTwo = choice;
-    }
-    if(pet1.checked) {
+    }else if(major == 'Social Science' || major == 'History') {
+        pieCThree = choice;
+    }else if(major == 'Engineering') {
         pieCFour = choice;
+    }else if(major == 'Bio Science' || major == 'Bio' || major == 'Bioscience') {
+        pieCFive = choice;
+    }else if(major == 'Pyschology') {
+        pieCSix = choice;
+    }else if(major == 'Communication') {
+        pieCSeven = choice;
+    }else if(major == 'Visuals Arts' || major == 'Performancing Arts' || major == 'Arts') {
+        pieCEight = choice;
+    }else if(major == 'Computer Science' || major == "Information Science") {
+        pieCNine = choice;
+    }else if(major == 'Education') {
+        pieCTen = choice;
+    } else {
+        pieCEleven = choice;
     }
+
+
+
+
 
     var ctx_2 = document.getElementById("College_year").getContext('2d');
     var data_2 = {
@@ -167,15 +224,22 @@ function populateGraphs () {
                 98949,
                 29022,
                 55843,
-                102219
-
+                102219,
+                342301
+                
             ],
             backgroundColor: [
                 pieCOne,
                 pieCTwo,
                 pieCThree,
                 pieCFour,
-                pieCFive
+                pieCFive,
+                pieCSix,
+                pieCSeven,
+                pieCEight,
+                pieCNine,
+                pieCTen,
+                pieCEleven
                 
             ],
         }],
@@ -194,12 +258,12 @@ function populateGraphs () {
         ]
     };
     var myDoughnutChart_2 = new Chart(ctx_2, {
-        type: 'pie',
+        type: 'bar',
         data: data_2,
         options: {
             title: {
                 display: true,
-                text: 'Most Popular Majors',
+                text: 'Graduates Per Major Per Year',
                 fontSize: 25
             },
             responsive: false,
@@ -220,14 +284,23 @@ function populateGraphs () {
     let pieDFive = colorFive;
     let pieDSix = colorSix;
 
-    if(pet2.checked) {
-        pieBFive = choice;
+    if(team == 'Manchester United') {
+        pieDOne = choice;
+    }else if(team == 'New York Yankees') {
+        pieDTwo = choice;
+    }else if(team == 'Los Angeles Lakers') {
+        pieDThree = choice;
+    }else if(team == 'Real Madrid') {
+        pieDFour = choice;
+    }else if(team == 'Green Bay Packers') {
+        pieDFive = choice;
+    } else {
+        pieDSix = choice;
     }
-
     var ctx_4 = document.getElementById("Favorite_team").getContext('2d');
     var data_4 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [20.4, 13.3, 12.2, 9.9, 9.7, 34.5],
             backgroundColor: [
                 pieDOne,
                 pieDTwo,
@@ -239,12 +312,12 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Manchester United',
+            'New York Yankees',
+            'Los Angeles Lakers',
+            'Real Madrid',
+            'Green Bay Packers',
+            'Other'
         ]
     };
     var myDoughnutChart_4 = new Chart(ctx_4, {
@@ -253,9 +326,12 @@ function populateGraphs () {
         options: {
             title: {
                 display: true,
-                text: 'Most Popular Sports Teams',
+                text: 'Most Popular Sports Teams By Percentage',
                 fontSize: 25
             },
+            axisY:{
+                valueFormatString:"0'%'"
+              },
             responsive: false,
             maintainAspectRatio: false,
             legend: {
@@ -267,21 +343,30 @@ function populateGraphs () {
             }
         }
     });
-    let pieEOne = colorOne;
-    let pieETwo = colorTwo;
-    let pieEThree = colorThree;
-    let pieEFour = colorFour;
+    let pieEOne = colorSix;
+    let pieETwo = colorThree;
+    let pieEThree = colorFour;
+    let pieEFour = colorOne;
     let pieEFive = colorFive;
-    let pieESix = colorSix;
+    let pieESix = colorTwo;
 
-    if(pet2.checked) {
-        pieBFive = choice;
+    if(player == 'Lebron James') {
+        pieEOne = choice;
+    }else if(player == 'Cristiano Ronaldo') {
+        pieETwo = choice;
+    }else if(player == 'Lionel Messi') {
+        pieEThree = choice;
+    }else if(player == 'John Cena') {
+        pieEFour = choice;
+    }else if(player == 'Neymar') {
+        pieEFive = choice;
+    } else {
+        pieESix = choice;
     }
-
     var ctx_5 = document.getElementById("Favorite_athlete").getContext('2d');
     var data_5 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [15.9, 8.2, 6.4, 12.2, 2.2, 55.1],
             backgroundColor: [
                 pieEOne,
                 pieETwo,
@@ -293,12 +378,12 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Lebron James',
+            'Cristiano Ronaldo',
+            'Lionel Messi',
+            'John Cena',
+            'Neymar',
+            'Other'
         ]
     };
     var myDoughnutChart_5 = new Chart(ctx_5, {
@@ -307,7 +392,7 @@ function populateGraphs () {
         options: {
             title: {
                 display: true,
-                text: 'Most Popular Athletes',
+                text: 'Most Popular Athletes By Percentage',
                 fontSize: 25
             },
             responsive: false,
@@ -328,31 +413,31 @@ function populateGraphs () {
     let pieFFive = colorFive;
     let pieFSix = colorSix;
 
-    if(pet2.checked) {
-        pieFFive = choice;
+    if(gender == 'female' || gender == 'Female') {
+        pieFOne = choice;
+    } else if(gender == 'male' || gender == 'Male') {
+        pieFTwo = choice;
+    } else {
+        pieFThree = choice;
     }
 
     var ctx_6 = document.getElementById("Common_genders").getContext('2d');
     var data_6 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [49.2, 43.6, 5.6],
             backgroundColor: [
                 pieFOne,
                 pieFTwo,
                 pieFThree,
-                pieFFour,
-                pieFFive,
-                pieFSix
+
                 
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Female',
+            'Male',
+            'Other'
+
         ]
     };
     var myDoughnutChart_6 = new Chart(ctx_6, {
@@ -361,7 +446,7 @@ function populateGraphs () {
         options: {
             title: {
                 display: true,
-                text: 'Common Gender Identities',
+                text: 'Percentage Of The US That Identifies As A Gender',
                 fontSize: 25
             },
             responsive: false,
@@ -381,32 +466,62 @@ function populateGraphs () {
     let pieGFour = colorFour;
     let pieGFive = colorFive;
     let pieGSix = colorSix;
+    let pieGSeven = colorSeven;
+    let pieGEight = colorEight;
+    let pieGNine = colorNine;
+    let pieGTen = colorTen;
 
-    if(pet2.checked) {
-        pieFFive = choice;
+    if(people == 'Ugur Sahin') {
+        pieGOne = choice;
+    }else if(people == 'Kamala Harris') {
+        pieGTwo = choice;
+    }else if(people == 'Joe Biden') {
+        pieGThree = choice;
+    }else if(people == 'Anthony Fauci') {
+        pieGFour = choice;
+    }else if(people == 'Emmanuelle Charpentier') {
+        pieGFive = choice;
+    }else if(people == 'Jacinda Ardern') {
+        pieGSix = choice;
+    }else if(people == 'Meghan Markle') {
+        pieGSeven = choice;
+    }else if(people == 'Sanna Marin') {
+        pieGEight = choice;
+    }else if(people == 'Michelle Obama') {
+        pieGNine = choice;
+    }else {
+        pieGTen = choice;
     }
 
     var ctx_7 = document.getElementById("inspirational_people").getContext('2d');
     var data_7 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [42340, 71236, 68980, 102340, 58720, 31123, 78403, 98123, 29394, 42382],
             backgroundColor: [
                 pieGOne,
                 pieGTwo,
                 pieGThree,
                 pieGFour,
                 pieGFive,
-                pieGSix
+                pieGSix,
+                pieGSeven,
+                pieGEight,
+                pieGNine,
+                pieGTen
                 
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Ugur Sahin',
+            'Kamala Harris',
+            'Joe Biden',
+            'Anthony Fauci',
+            'Emmanuelle Charpentier',
+            'Jacinda Ardern',
+            'Meghan Markle',
+            'Sanna Marin',
+            'Michelle Obama',
+            'Other'
         ]
     };
     var myDoughnutChart_7 = new Chart(ctx_7, {
@@ -436,14 +551,23 @@ function populateGraphs () {
     let pieHFive = colorFive;
     let pieHSix = colorSix;
 
-    if(pet2.checked) {
-        pieHFive = choice;
+     if(language1.checked) {
+        pieHOne = choice;
+    }
+    if(language2.checked) {
+        pieHTwo = choice;
+    }
+    if(language3.checked) {
+        pieHThree = choice;
+    }
+    if(language4.checked) {
+        pieHFour = choice;
     }
 
     var ctx_8 = document.getElementById("language_count").getContext('2d');
     var data_8 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [123409820, 20120136, 31289080, 12041343],
             backgroundColor: [
                 pieHOne,
                 pieHTwo,
@@ -455,12 +579,10 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            '1',
+            '2',
+            '3-4',
+            '5+',
         ]
     };
     var myDoughnutChart_8 = new Chart(ctx_8, {
@@ -490,14 +612,23 @@ function populateGraphs () {
     let pieIFive = colorFive;
     let pieISix = colorSix;
 
-    if(pet2.checked) {
+    var locationState;
+    var locationCity;
+    if(locationCity == 'Mt Vernon' || 'Mt, Vernon') {
+        pieIOne = choice;
+    } else if(locationCity == 'Bellingham') {
+        pieITwo = choice;
+    } else if(locationState == 'Washington' && locationCity != 'Mt Vernon' && locationCity != 'Bellingham') {
+        pieIThree = choice;
+    } else if(locationState == 'Oregon') {
+        pieIFour = choice;
+    } else {
         pieIFive = choice;
     }
-
     var ctx_9 = document.getElementById("Website_location").getContext('2d');
     var data_9 = {
         datasets: [{
-            data: [12340, 21236, 38980, 12340, 58720, 123],
+            data: [10.2, 45.5, 20.1, 10.5, 13.7],
             backgroundColor: [
                 pieIOne,
                 pieITwo,
@@ -509,12 +640,11 @@ function populateGraphs () {
             ],
         }],
         labels: [
-            'Icecream',
-            'Pizza',
-            'Burger',
-            'Carrots',
-            'Lasgna',
-            'Pickle'
+            'Mt Vernon',
+            'Bellingham',
+            'Washington',
+            'Oregon',
+            'Other'
         ]
     };
     var myDoughnutChart_9 = new Chart(ctx_9, {
@@ -523,7 +653,7 @@ function populateGraphs () {
         options: {
             title: {
                 display: true,
-                text: 'Location of Website Visiters ',
+                text: 'Website Traffic By Percentage',
                 fontSize: 25
             },
             responsive: false,
@@ -547,13 +677,17 @@ function useSurvey() {
 
     // extract info from survey
     var name = document.getElementById("nameBox").value
-    var gender = document.getElementById("genderBox").value
+    gender = document.getElementById("genderBox").value
     age = document.getElementById("ageBox").value
 
-    var locationState = document.getElementById("locationStateBox").value
-    var locationCity = document.getElementById("locationCityBox").value
+    locationState = document.getElementById("locationStateBox").value
+    locationCity = document.getElementById("locationCityBox").value
 
-    var major = document.getElementById("majorBox").value
+    major = document.getElementById("majorBox").value
+
+    team = document.getElementById("teamBox").value
+    player = document.getElementById("playerBox").value
+    people = document.getElementById("peopleBox").value
 
     var pet1 = document.getElementById("pet1")
     var pet2 = document.getElementById("pet2")
@@ -576,6 +710,16 @@ function useSurvey() {
     if(food4.checked) selectedFood = food4.value
     if(food5.checked) selectedFood = food5.value
     if(food6.checked) selectedFood = food6.value
+
+    var language1 = document.getElementById("language1")
+    var language2 = document.getElementById("language2")
+    var language3 = document.getElementById("language3")
+    var language4 = document.getElementById("language3")
+    var selectedLanguage = ""
+    if(language1.checked) selectedLanguage = language1.value
+    if(language2.checked) selectedLanguage = language2.value
+    if(language3.checked) selectedLanguage = language3.value
+    if(language4.checked) selectedLanguage = language4.value 
 
     // print usable info
     if(name != "")
