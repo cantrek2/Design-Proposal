@@ -2,15 +2,18 @@
 //var c = canvas.getContext("2d");
 var z = 300;
 
-var ageRange = 50;
-var education = 100;
-var favoriteTeams = 50;
+var ageRange = z;
+var prefFood = z;
+var education = z;
+var favoriteTeams = z;
 var favoriteAthletes = z;
 var gender = z;
 //var hometown = z;
 var inspirationalPeople = z;
 var languages = z;
 var curLocation = z;
+
+
 
 
 var political = z;
@@ -38,6 +41,8 @@ function setup() {
     line(1260, 0, 1260, 600);
     line(1440, 0, 1440, 600);
     line(1620, 0, 1620, 600);
+    line(1620, 0, 1620, 600);
+    line(1800, 0, 1800, 600);
 
     stroke('black');
     strokeWeight(10);
@@ -64,7 +69,53 @@ function setup() {
     rectMode(CENTER);
 
     //rect(x, 150, 150, 150);
- 
+    if(age <= 17) {
+      ageRange = z;
+    }
+    if(age >= 18 && age <=24) {
+      ageRange = z-150;
+    }
+    if(age >= 25 && age <=34) {
+      ageRange = z-100;
+    }
+    if(age >= 35 && age <=44) {
+      ageRange = z+50;
+    }
+    if(age >= 45 && age <=54) {
+      ageRange = z+100;
+    }
+    if(age >= 55 && age <=64) {
+      ageRange = z+150;
+    }
+    if(age >= 65) {
+      ageRange = z+200;
+    }
+    
+
+  if(food1.checked) {
+      pieBOne = choice;
+      ageRange = z-50;
+  }
+  if(food2.checked) {
+      pieBTwo = choice;
+      ageRange = z-150;
+  }
+  if(food3.checked) {
+      pieBThree = choice;
+      ageRange = z+50;
+  }
+  if(food4.checked) {
+      pieBFour = choice;
+      ageRange = z-100;
+  }
+  if(food5.checked) {
+      pieBFive = choice;
+      ageRange = z+100;
+  }
+  if(food6.checked) {
+      pieBSix = choice;
+      ageRange = z+150;
+  }
   }
 
   
