@@ -247,11 +247,281 @@ function populateGraphs () {
     };
     var myDoughnutChart_4 = new Chart(ctx_4, {
         type: 'pie',
-        data: data_2,
+        data: data_4,
         options: {
             title: {
                 display: true,
                 text: 'Most Popular Sports Teams',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieEOne = colorOne;
+    let pieETwo = colorTwo;
+    let pieEThree = colorThree;
+    let pieEFour = colorFour;
+    let pieEFive = colorFive;
+    let pieESix = colorSix;
+
+    if(pet2.checked) {
+        pieBFive = choice;
+    }
+
+    var ctx_5 = document.getElementById("Favorite_athlete").getContext('2d');
+    var data_5 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieEOne,
+                pieETwo,
+                pieEThree,
+                pieEFour,
+                pieEFive,
+                pieESix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_5 = new Chart(ctx_5, {
+        type: 'pie',
+        data: data_5,
+        options: {
+            title: {
+                display: true,
+                text: 'Most Popular Athletes',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieFOne = colorOne;
+    let pieFTwo = colorTwo;
+    let pieFThree = colorThree;
+    let pieFFour = colorFour;
+    let pieFFive = colorFive;
+    let pieFSix = colorSix;
+
+    if(pet2.checked) {
+        pieFFive = choice;
+    }
+
+    var ctx_6 = document.getElementById("Common_genders").getContext('2d');
+    var data_6 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieFOne,
+                pieFTwo,
+                pieFThree,
+                pieFFour,
+                pieFFive,
+                pieFSix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_6 = new Chart(ctx_6, {
+        type: 'pie',
+        data: data_6,
+        options: {
+            title: {
+                display: true,
+                text: 'Common Gender Identities',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieGOne = colorOne;
+    let pieGTwo = colorTwo;
+    let pieGThree = colorThree;
+    let pieGFour = colorFour;
+    let pieGFive = colorFive;
+    let pieGSix = colorSix;
+
+    if(pet2.checked) {
+        pieFFive = choice;
+    }
+
+    var ctx_7 = document.getElementById("inspirational_people").getContext('2d');
+    var data_7 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieGOne,
+                pieGTwo,
+                pieGThree,
+                pieGFour,
+                pieGFive,
+                pieGSix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_7 = new Chart(ctx_7, {
+        type: 'pie',
+        data: data_7,
+        options: {
+            title: {
+                display: true,
+                text: 'Most Inspirational People',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieHOne = colorOne;
+    let pieHTwo = colorTwo;
+    let pieHThree = colorThree;
+    let pieHFour = colorFour;
+    let pieHFive = colorFive;
+    let pieHSix = colorSix;
+
+    if(pet2.checked) {
+        pieHFive = choice;
+    }
+
+    var ctx_8 = document.getElementById("language_count").getContext('2d');
+    var data_8 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieHOne,
+                pieHTwo,
+                pieHThree,
+                pieHFour,
+                pieHFive,
+                pieHSix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_8 = new Chart(ctx_8, {
+        type: 'pie',
+        data: data_8,
+        options: {
+            title: {
+                display: true,
+                text: 'Number of Languages Spoken/Read',
+                fontSize: 25
+            },
+            responsive: false,
+            maintainAspectRatio: false,
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        }
+    });
+    let pieIOne = colorOne;
+    let pieITwo = colorTwo;
+    let pieIThree = colorThree;
+    let pieIFour = colorFour;
+    let pieIFive = colorFive;
+    let pieISix = colorSix;
+
+    if(pet2.checked) {
+        pieIFive = choice;
+    }
+
+    var ctx_9 = document.getElementById("Website_location").getContext('2d');
+    var data_9 = {
+        datasets: [{
+            data: [12340, 21236, 38980, 12340, 58720, 123],
+            backgroundColor: [
+                pieIOne,
+                pieITwo,
+                pieIThree,
+                pieIFour,
+                pieIFive,
+                pieISix
+                
+            ],
+        }],
+        labels: [
+            'Icecream',
+            'Pizza',
+            'Burger',
+            'Carrots',
+            'Lasgna',
+            'Pickle'
+        ]
+    };
+    var myDoughnutChart_9 = new Chart(ctx_9, {
+        type: 'pie',
+        data: data_9,
+        options: {
+            title: {
+                display: true,
+                text: 'Location of Website Visiters ',
                 fontSize: 25
             },
             responsive: false,
