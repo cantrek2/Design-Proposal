@@ -4,7 +4,7 @@ var locationState;
 var locationCity;
 var gender;
 var participation = 0;
-
+var relationship = 0;
 var team;
 var player;
 var people;
@@ -33,27 +33,39 @@ function populateGraphs () {
     let pieSeven = colorSeven;
 
     participation = 0;
+    relationship = 0;
     if(age <= 17) {
         pieOne = choice;
         participation++;
     }
     if(age >= 18 && age <=24) {
         pieTwo = choice;
+        relationship++;
     }
     if(age >= 25 && age <=34) {
         pieThree = choice;
+        relationship++;
+        relationship++;
     }
     if(age >= 35 && age <=44) {
         pieFour = choice;
+        relationship++;
+        relationship++;
     }
     if(age >= 45 && age <=54) {
         pieFive = choice;
+        relationship++;
+        relationship++;
     }
     if(age >= 55 && age <=64) {
         pieSix = choice;
+        relationship++;
+        relationship++;
     }
     if(age >= 65) {
         pieSeven = choice;
+        relationship++;
+        relationship++;
     }
     var ctx = document.getElementById("Age_range").getContext('2d');
     var data = {
@@ -195,11 +207,13 @@ function populateGraphs () {
     
     if(major == 'Business') {
         pieCOne = choice;
+        relationship++;
     }else if(major == 'Health Profession' || major == 'Nursing' || major == 'Doctor' || major == 'Nurse') {
         pieCTwo = choice;
-
+        relationship++;
     }else if(major == 'Social Science' || major == 'History') {
         pieCThree = choice;
+        relationship++;
         //ageRange = z+100;
     }else if(major == 'Engineering') {
         pieCFour = choice;
@@ -209,12 +223,15 @@ function populateGraphs () {
         //ageRange = z-50;
     }else if(major == 'Pyschology') {
         pieCSix = choice;
+        relationship++;
         //ageRange = z+150;
     }else if(major == 'Communication') {
         pieCSeven = choice;
+        relationship++;
         //ageRange = z-50;
     }else if(major == 'Visuals Arts' || major == 'Performancing Arts' || major == 'Arts') {
         pieCEight = choice;
+        relationship++;
        // ageRange = z-200;
     }else if(major == 'Computer Science' || major == "Information Science") {
         pieCNine = choice;
@@ -581,12 +598,16 @@ function populateGraphs () {
     }
     if(language2.checked) {
         pieHTwo = choice;
+        relationship++;
     }
     if(language3.checked) {
         pieHThree = choice;
+        relationship++;
     }
     if(language4.checked) {
         pieHFour = choice;
+        relationship++;
+        relationship++;
     }
 
     var ctx_8 = document.getElementById("language_count").getContext('2d');
@@ -640,6 +661,7 @@ function populateGraphs () {
 
     if(locationCity == 'Mt Vernon' || locationCity =='Mt, Vernon') {
         pieIOne = choice;
+        relationship++;
     } else if(locationCity == 'Bellingham') {
         pieITwo = choice;
     } else if(locationState == 'Washington' && locationCity != 'Mt Vernon' && locationCity != 'Bellingham') {

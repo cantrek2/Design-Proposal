@@ -21,7 +21,7 @@ var curLocation = z;
 var political;
 var favoriteQuotes;
 var sports;
-var relationship;
+
 
 function setup() {
     createCanvas(1800, 700);
@@ -79,18 +79,23 @@ function setup() {
     }
     if(age >= 18 && age <=24) {
       ageRange = z-150;
+      
     }
     if(age >= 25 && age <=34) {
       ageRange = z-100;
+
     }
     if(age >= 35 && age <=44) {
       ageRange = z+50;
+
     }
     if(age >= 45 && age <=54) {
       ageRange = z+100;
+
     }
     if(age >= 55 && age <=64) {
       ageRange = z+150;
+
     }
     if(age >= 65) {
       ageRange = z+200;
@@ -117,24 +122,34 @@ function setup() {
 
   if(major == 'Business') {
     education = z+200;
+
 }else if(major == 'Health Profession' || major == 'Nursing' || major == 'Doctor' || major == 'Nurse') {
   education = z-50;
+
 }else if(major == 'Social Science' || major == 'History') {
   education = z+100;
+
 }else if(major == 'Engineering') {
   education = z-50;
+ 
 }else if(major == 'Bio Science' || major == 'Bio' || major == 'Bioscience') {
   education = z-50;
+
 }else if(major == 'Pyschology') {
   education = z+150;
+
 }else if(major == 'Communication') {
   education = z-50;
+
 }else if(major == 'Visuals Arts' || major == 'Performancing Arts' || major == 'Arts') {
   education = z-200;
+
 }else if(major == 'Computer Science' || major == "Information Science") {
   education = z+50;
+
 }else if(major == 'Education') {
   education = z-150;
+
 } else {
   education = z;
 }
@@ -213,16 +228,20 @@ if(language1.checked) {
 }
 if(language2.checked) {
   languages = z -50;
+
 }
 if(language3.checked) {
   languages = z -100;
+
 }
 if(language4.checked) {
   languages = z -150;
+
 }
 
 if(locationCity == 'Mt Vernon' || locationCity =='Mt, Vernon') {
   curLocation = z - 150;
+
 } else if(locationCity == 'Bellingham') {
   curLocation = z - 50;
 } else if(locationState == 'Washington' && locationCity != 'Mt Vernon' && locationCity != 'Bellingham') {
@@ -263,9 +282,8 @@ if(adjustedTotal < -700) {
 if(adjustedTotal > 300) {
   political = -1;
 }
-text(participation, 0, 680);
+
 if(participation > 5) {
-  text(participation, 0, 680);
   text('Either due to low responses, or unexpected responses we were unable to accurately place you into a group.', 90, 650);
   text('If you wish to see any results try to fill in as many surveys as you can. ', 90, 680);
 } else {
@@ -273,27 +291,38 @@ if(participation > 5) {
     text('Based on a 15% confidence you are predicted to be politically Libertarian', 90, 630);
   }
   if(adjustedTotal < -300 && adjustedTotal >= -700) {
-    text('Based on a 15% confidence you are predicted to be politically Liberal', 90, 630);
+    text('Based on a 12% confidence you are predicted to be politically Liberal', 90, 630);
   }
   if(adjustedTotal < -700) {
-    text('Based on a 15% confidence you are predicted to be politically Centrist', 90, 630);
+    text('Based on a 20% confidence you are predicted to be politically Centrist', 90, 630);
   }
   if(adjustedTotal > 300) {
-    text('Based on a 15% confidence you are predicted to be politically Conservative', 90, 630);
+    text('Based on a 6% confidence you are predicted to be politically Conservative', 90, 630);
   }
 
   if(sports == 0) {
-    text('Your favorite sport is likely to be North American Football', 90, 650);
+    text('Your favorite sport is likely to be North American Football', 90, 660);
   }
   if(sports == 1) {
-    text('Your favorite sport is likely to be Soccer', 90, 650);
+    text('Your favorite sport is likely to be Soccer', 90, 660);
   }
   if(sports == 2) {
-    text('Your favorite sport is likely to be Basketball', 90, 650);
+    text('Your favorite sport is likely to be Basketball', 90, 660);
   }
   if(sports == 5) {
-   text('You seem not to enjoy a mainstream sport', 90, 650);
+   text('You seem not to enjoy a mainstream sport', 90, 660);
   }
+
+  if(relationship == 0) {
+    text('You are predicted to currently be single', 90, 690);
+  }
+  if(relationship == 1) {
+    text('You are predicted to currently be dating', 90, 690);
+  }
+  if(relationship >= 2) {
+    text('You are predicted to currently be married', 90, 690);
+  }
+
 }
 //text(adjustedTotal, 190, 650);
 
